@@ -31,7 +31,7 @@ Python, FastMCP, SQLAlchemy, SerpAPI, OpenAI
    pip install -r requirements.txt
    ```
 
-2. Create a `.env` file in the project root (never commit this file):
+2. Create a `.env` file in the project root :
    ```env
    DATABASE_URL=sqlite:///./finpilot.db
    OPENAI_API_KEY=your_openai_key
@@ -46,18 +46,3 @@ Python, FastMCP, SQLAlchemy, SerpAPI, OpenAI
    ```bash
    python -m FinPilot.main
    ```
-
-## Known limitations
-
-- Single-user only — there's no per-user scoping on expenses yet.
-- No budget enforcement logic yet, even though a `Budget` model exists in
-  the schema — this is a planned next step, not a working feature.
-- No input validation on expense amounts/dates.
-
-## Roadmap
-
-- [ ] Wire up budget limits to `add_expense` (warn/block when a category
-      exceeds its monthly limit)
-- [ ] Add per-user scoping
-- [ ] Add input validation
-- [ ] Add tests
